@@ -1,0 +1,6 @@
+# libtorch link
+# https://download.pytorch.org/libtorch/cu116/libtorch-shared-with-deps-1.13.1%2Bcu116.zip
+# make this also make file
+cd build
+cmake -DCMAKE_PREFIX_PATH=$PWD/../../libtorch ..
+cmake --build . --config Release
