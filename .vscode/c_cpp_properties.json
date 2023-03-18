@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${default}",
+                "/scratch/workspaceblobstore/LocalUpload/User/sahuamrit/Repo/libtorch/include/torch/csrc/api/include",
+                "/scratch/workspaceblobstore/LocalUpload/User/sahuamrit/Repo/libtorch/include",
+                "/scratch/workspaceblobstore/LocalUpload/User/sahuamrit/Repo/libtorch/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
