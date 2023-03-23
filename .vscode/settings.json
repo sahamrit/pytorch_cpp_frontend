@@ -44,8 +44,40 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "cinttypes": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "bitset": "cpp",
+        "mutex": "cpp",
+        "shared_mutex": "cpp",
+        "thread": "cpp",
+        "regex": "cpp",
+        "any": "cpp",
+        "cfenv": "cpp",
+        "charconv": "cpp",
+        "chrono": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "csetjmp": "cpp",
+        "csignal": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cuchar": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp",
+        "ratio": "cpp",
+        "future": "cpp",
+        "iomanip": "cpp",
+        "scoped_allocator": "cpp",
+        "typeindex": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp"
     },
-    "C_Cpp.default.includePath": ["/scratch/workspaceblobstore/LocalUpload/User/sahuamrit/Repo/libtorch/include/torch/csrc/api/include/**",
-        "/scratch/workspaceblobstore/LocalUpload/User/sahuamrit/Repo/libtorch/include/torch/csrc/**"]   
+    "C_Cpp.default.includePath": [
+        "/scratch/workspaceblobstore/LocalUpload/User/sahuamrit/Repo/libtorch/include/torch/csrc/api/include/**",
+        "/scratch/workspaceblobstore/LocalUpload/User/sahuamrit/Repo/libtorch/include/torch/csrc/**"
+    ],
+    "editor.formatOnSave": true
 }
