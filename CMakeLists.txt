@@ -3,6 +3,6 @@ project(dcgan)
 
 find_package(Torch REQUIRED)
 
-add_executable(dcgan  main.cpp)
-target_link_libraries(dcgan "${TORCH_LIBRARIES}")
-set_property(TARGET dcgan PROPERTY CXX_STANDARD 14)
+add_executable(currentExecutable  main.cpp dcgan.cpp)
+target_link_libraries(currentExecutable "${TORCH_LIBRARIES}")
+set_property(TARGET currentExecutable PROPERTY CXX_STANDARD 14)

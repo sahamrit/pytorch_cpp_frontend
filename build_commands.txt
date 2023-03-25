@@ -4,3 +4,7 @@
 cd build
 cmake -DCMAKE_PREFIX_PATH=$PWD/../../libtorch ..
 cmake --build . --config Release
+
+#For debug use
+cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=$PWD/../../libtorch ..
+cmake --build . --config Debug
