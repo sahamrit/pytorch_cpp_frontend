@@ -15,12 +15,14 @@ namespace
     const string path = "/scratch/workspaceblobstore/LocalUpload/User/sahuamrit/Repo/pytorch_cpp_frontend/data";
     const int64_t kBatchSize = 64;
     const int64_t kNoiseSize = 100;
-    const int64_t kNumberOfEpochs = 2;
-
+    const int64_t kNumberOfEpochs = 30;
+    const int64_t kCheckpointEvery = 100;
 } // namespace
 
 int main(int argc, char **argv)
 {
+    cout << "Training Started"
+         << "\n";
 
     torch::Device device = torch::kCPU;
     if (torch::cuda::is_available())
@@ -70,6 +72,7 @@ int main(int argc, char **argv)
 
     // Training Loop
 
+    int64_t checkpoint_counter = 0;
     for (int64_t epoch = 0; epoch < kNumberOfEpochs; epoch++)
     {
         int64_t batch_idx = 0;
@@ -117,6 +120,21 @@ int main(int argc, char **argv)
                 batches_per_epoch,
                 d_loss.item<float>(),
                 g_loss.item<float>());
+
+            if (batch_idx % kCheckpointEvery == 0)
+            {
+                // Checkpoint the model and optimizer state.
+                torch::save(generator, "generator-checkpoint.pt");
+                torch::save(generator_optimizer, "generator-optimizer-checkpoint.pt");
+                torch::save(discriminator, "discriminator-checkpoint.pt");
+                torch::save(discriminator_optimizer, "discriminator-optimizer-checkpoint.pt");
+                // Sample the generator and save the images.
+                torch::Tensor samples = generator->forward(torch::randn({8, kNoiseSize, 1, 1}, device));
+                torch::save((samples + 1.0) / 2.0, torch::str("dcgan-sample-", checkpoint_counter, ".pt"));
+                cout << "\n-> checkpoint " << ++checkpoint_counter << '\n';
+            }
         }
     }
+    cout << "Training complete!"
+         << "\n";
 }
